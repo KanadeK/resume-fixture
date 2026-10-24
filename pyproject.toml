@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "resume-fixture"
+version = "0.1.0"
+description = "Loopback HTTP fixtures for interrupted and changed-entity download resumes."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "KanadeK"}]
+dependencies = []
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.13",
+]
+
+[project.scripts]
+resume-fixture = "resume_fixture.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/KanadeK/resume-fixture"
+Issues = "https://github.com/KanadeK/resume-fixture/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.coverage.run]
+branch = true
+source = ["resume_fixture"]
+
+[tool.coverage.report]
+show_missing = true
